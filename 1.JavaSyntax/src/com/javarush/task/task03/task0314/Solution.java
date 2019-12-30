@@ -31,7 +31,7 @@ public class Solution {
                 System.out.print(factor+" ");
             }
             count++;
-            System.out.println("\n");
+            System.out.print("\n");
         }
     }
 }

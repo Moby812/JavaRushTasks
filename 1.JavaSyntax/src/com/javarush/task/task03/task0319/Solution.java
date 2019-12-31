@@ -12,10 +12,12 @@ public class Solution {
         //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));   //инициализируем сканер
         String name = reader.readLine();                                                //задаем чтение с клавы
-        String number1 = reader.readLine();
-        String number2 = reader.readLine();
-        int number1F = Integer.parseInt(number1);                                       //преобразуем строку в число
-        int number2F = Integer.parseInt(number2);
+        int number2F = Integer.parseInt(reader.readLine());                             //читаем с клавы сразу int
+        int number1F = Integer.parseInt(reader.readLine());
+//        String number1 = reader.readLine();
+//        String number2 = reader.readLine();
+//        int number1F = Integer.parseInt(number1);                                       //преобразуем строку в число
+//        int number2F = Integer.parseInt(number2);
 
         System.out.println(name+" получает "+number1F+" через "+number2F+" лет.");
     }

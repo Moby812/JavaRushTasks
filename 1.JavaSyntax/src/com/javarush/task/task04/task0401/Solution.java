@@ -15,8 +15,8 @@ public class Solution {
     public static class Person {
         public int age = 20;
 
-        public void adjustAge(int agef) {
-            age = age + 20;
+        public void adjustAge(int age) {
+            this.age = age + 20;                                    //через this. мы обращамся к одноимённой переменной класса, а не метода
             System.out.println("Age in adjustAge() is: " + age);
         }
     }

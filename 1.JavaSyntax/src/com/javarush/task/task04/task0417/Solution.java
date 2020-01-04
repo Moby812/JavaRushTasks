@@ -15,12 +15,11 @@ public class Solution {
         int number2 = Integer.parseInt(reader.readLine());
         int number3 = Integer.parseInt(reader.readLine());
 
-        if (number1 == number2 || number1 == number3) {
-            System.out.println(number1);
-        } else if (number2 == number1 || number2 == number3) {
-            System.out.println(number2);
-        } else if (number3 == number1 || number3 == number2) {
-            System.out.println(number3);
-        }
+        if (number1 == number2 || number1 == number3)
+            System.out.print(number1+" ");
+        if (number2 == number1 || number2 == number3)
+            System.out.print(number2+" ");
+        if (number3 == number1 || number3 == number2)
+            System.out.print(number3);
     }
 }

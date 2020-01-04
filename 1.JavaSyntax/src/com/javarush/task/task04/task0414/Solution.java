@@ -16,10 +16,8 @@ public class Solution {
         int leapYear = 366;         //висакосны год
         int standardYear = 365;     //не висакосный год
 
-        if (year % 400 == 0 || year % 400 % 100 % 4 == 0) {
+        if (year % 400 == 0 || (year % 400) % 100 != 0 && ((year % 400) % 100) % 4 == 0) {
             System.out.println(text + leapYear);
-        } else if (year % 400 % 100 == 0) {
-            System.out.println(text + standardYear);
         } else {
             System.out.println(text + standardYear);
         }

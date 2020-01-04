@@ -13,7 +13,11 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int year = Integer.parseInt(reader.readLine());
         String text ="количество дней в году: ";
+        int leapYear = 366;         //висакосны год
+        int standardYear = 365;     //не висакосный год
 
-
+        if ((year/400) == 0) {
+            System.out.println(text+leapYear);
+        }
     }
 }

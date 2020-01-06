@@ -16,27 +16,27 @@ public class Solution {
         int c = Integer.parseInt(reader.readLine());
         String space = " ";
 
-        if (a < b && a < c) {
+        if (a >= b && a >= c) {
             System.out.print(a + space);
-            if (b < c) {
+            if (b >= c) {
                 System.out.print(b + space);
                 System.out.print(c);
             } else {
                 System.out.print(c + space);
                 System.out.print(b);
             }
-        } else if (b < a && b < c) {
+        } else if (b >= a && b >= c) {
             System.out.print(b + space);
-            if (a < c) {
+            if (a >= c) {
                 System.out.print(a + space);
                 System.out.print(c);
             } else {
                 System.out.print(c + space);
                 System.out.print(a);
             }
-        } else if (c < a && c < b) {
+        } else {
             System.out.print(c + space);
-            if (a < b) {
+            if (a >= b) {
                 System.out.print(a + space);
                 System.out.print(b);
             } else {

@@ -12,13 +12,13 @@ public class Solution {
         //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String name1 = reader.readLine();
-        int len1 = name1.length();
+//        int len1 = name1.length();
         String name2 = reader.readLine();
-        int len2 = name2.length();
+//        int len2 = name2.length();
 
         if (name1.equals(name2)) {
             System.out.println("Имена идентичны");
-        } else if (len1 == len2) {
+        } else if (name1.length() == name2.length()) {
             System.out.println("Длины имен равны");
         }
     }

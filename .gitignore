@@ -13,6 +13,7 @@ target/
 #*.info
 *.properties
 *.jar
+*.xml
 
 #/1.JavaSyntax/
 #/2.JavaCore/
@@ -25,3 +26,4 @@ target/
 /out.log
 /out.log.*
 /_windows
+/codestyles

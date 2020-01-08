@@ -7,12 +7,14 @@ package com.javarush.task.task04.task0434;
 public class Solution {
     public static void main(String[] args) {
         //напишите тут ваш код
-        int factorOne = 1;      //count
+        int factorOne = 1;
 
         while (factorOne <= 10) {
-            for (int factorTwo =1;factorTwo <= 10;factorTwo++){
+            int factorTwo=1;
+            while (factorTwo <=10){
                 int factor = factorOne * factorTwo;
                 System.out.print(factor + " ");
+                factorTwo++;
             }
             System.out.println("");
             factorOne++;

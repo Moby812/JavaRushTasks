@@ -18,11 +18,11 @@ public class Cat {
     public int weight;
     public int strength;
 
-    Cat cat1 = new Cat(5, 15,5);
-    Cat cat2 = new Cat(3,13,4);
+    Cat cat1 = new Cat(5, 15, 5);
+    Cat cat2 = new Cat(3, 13, 4);
 
-    public Cat() {              //пустой конструктор
-    }
+//    public Cat() {              //пустой конструктор
+//    }
 
     public Cat(int age, int weight, int strength) {
         this.age = age;
@@ -35,17 +35,17 @@ public class Cat {
         int winCat1 = 0;
         int winCat2 = 0;
 
-        if (cat1.age < cat2.age)
+        if (this.age < anotherCat.age)
             winCat1++;
         else
             winCat2++;
 
-        if (cat1.weight > cat2.weight)
+        if (this.weight > anotherCat.weight)
             winCat1++;
         else
             winCat2++;
 
-        if (cat1.strength > cat2.strength)
+        if (this.strength > anotherCat.strength)
             winCat1++;
         else
             winCat2++;
@@ -55,7 +55,7 @@ public class Cat {
 
     public static void main(String[] args) {
 
-
+        System.out.println(cat1.fight(Cat cat2));
 
     }
 }

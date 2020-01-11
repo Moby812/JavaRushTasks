@@ -36,7 +36,7 @@ public class Cat {
         int winCat1 = 0;
         int winCat2 = 0;
 
-        if (this.age < anotherCat.age)
+        if (this.age > anotherCat.age)
             winCat1++;
         else
             winCat2++;
@@ -51,19 +51,24 @@ public class Cat {
         else
             winCat2++;
 
-        return winCat1 > winCat2;
+        if (winCat1 > winCat2)
+            return true;
+        else if (winCat1 == winCat2)
+            return false;
+        else
+            return false;
     }
 
     public static void main(String[] args) {
 
-        Cat cat1= new Cat();
-        cat1.age=5;
-        cat1.weight=15;
-        cat1.strength=5;
+        Cat cat1 = new Cat();
+        cat1.age = 5;
+        cat1.weight = 15;
+        cat1.strength = 5;
 
-        Cat cat2=new Cat();
-        cat2.age=3;
-        cat2.weight=13;
-        cat2.strength=4;
+        Cat cat2 = new Cat();
+        cat2.age = 3;
+        cat2.weight = 13;
+        cat2.strength = 4;
     }
 }

@@ -27,6 +27,20 @@ public class Cat {
 //        this.strength = strength;
 //    }
 
+//    public boolean fight(Cat anotherCat) {
+//        int point = Integer.compare(this.age, anotherCat.age) + Integer.compare(this.weight, anotherCat.weight) +
+//                Integer.compare(this.strength, anotherCat.strength);
+//        return point > 0;
+//    }
+
+/*
+Метод compare - сравнение двух int. Возвращает int.
+Синтаксис: public static int compare(int x,int y)
+- ноль, если x и y равны друг другу
+- минус 1 (точнее меньше нуля) если x меньше y
+- плюс 1 (больше чем ноль) если x больше y
+ */
+
     public boolean fight(Cat anotherCat) {
         //напишите тут ваш код
         int winCat1 = 0;
@@ -64,5 +78,8 @@ public class Cat {
         cat2.age = 3;
         cat2.weight = 13;
         cat2.strength = 4;
+
+        System.out.println(cat1.fight(cat2));
+        System.out.println(cat2.fight(cat1));
     }
 }

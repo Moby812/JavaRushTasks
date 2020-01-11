@@ -18,10 +18,6 @@ public class Cat {
     public int weight;
     public int strength;
 
-//    Cat cat1 = new Cat(5, 15,5);
-//    Cat cat2 = new Cat(3,13,4);
-
-
     public Cat() {              //пустой конструктор
     }
 
@@ -51,15 +47,13 @@ public class Cat {
         else
             winCat2++;
 
-        if (winCat1 > winCat2)
-            return true;
-        else if (winCat1 == winCat2)
-            return false;
-        else
-            return false;
+        return winCat1 > winCat2;
     }
 
     public static void main(String[] args) {
+
+//    Cat cat1 = new Cat(5, 15,5);
+//    Cat cat2 = new Cat(3,13,4);
 
         Cat cat1 = new Cat();
         cat1.age = 5;

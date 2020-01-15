@@ -18,9 +18,7 @@ public class Circle {
 
     public Circle(double x, double y) {
         //напишите тут ваш код
-        this ();
-        this.x=x;
-        this.y=y;
+        this(x,y,10);
     }
 
     public Circle() {

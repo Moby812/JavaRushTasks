@@ -39,13 +39,13 @@ public class Timer {
                 if (now.get(Calendar.SECOND) == nowTime.get(Calendar.SECOND) && now.get(Calendar.MILLISECOND) == nowTime.get(Calendar.MILLISECOND)) {      //проверка по условию ветвления, чтоб отображал в N сек - считывая с даты
                 Thread.sleep(1);                                  //приостановим работу программы на 1 милисекунду
                     timer--;
-                    if (timer != 0) System.out.println("Осталось подождать ещё " + timer + minMet(timer));
+                    if (timer != 0) System.out.println("Осталось подождать ещё " + timer + minMet(timer)+".");
                 }
             }
         }
     }
     public static String minMet(int timer){
-        String min = " минут";                                      // TODO: 16.01.2020 после присвоения, не будет возвращаться в "минут". поправить
+        String min = " минут";
         if (timer == 1) min = " минуту";
         if (timer > 20 && timer %10 == 1) min = " минуту";
         if (timer == 2 || timer == 3 ||timer == 4) min = " минуты";

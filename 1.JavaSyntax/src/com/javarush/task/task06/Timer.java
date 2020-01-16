@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -23,16 +22,9 @@ public class Timer {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введи в минутах, на сколько выставить таймер?\n");
         int timer = Integer.parseInt(reader.readLine());        // считаем число с клавы
-        String min = " минут";                                      // TODO: 16.01.2020 Выписать в отдельный метод чтоб вызвать и в цикле 
-        if (timer == 1) min = " минуту";
-        if (timer > 20 && timer %10 == 1) min = " минуту";
-        if (timer == 2 || timer == 3 ||timer == 4) min = " минуты";
-        if (timer > 20 && timer %10 == 2) min = " минуты";
-        if (timer > 20 && timer %10 == 3) min = " минуты";
-        if (timer > 20 && timer %10 == 4) min = " минуты";      // TODO: 16.01.2020 после присвоения, не будет вохвращаться в "минут". поправить 
 
-        needTime.add(Calendar.MINUTE, timer);           //выставляем время. (Текущее + которые мы задали с клавы)
-        System.out.println("Таймер выставлен на: " + timer + min+".\nДо: " + dateFormat.format(needTime.getTime()) + "\nОтсчёт пошёл!\n\n");
+        needTime.add(Calendar.MINUTE, timer);           //выставляем время таймера. (Текущее + которые мы задали с клавы)
+        System.out.println("Таймер выставлен на: " + timer + minMet(timer)+".\nДо: " + dateFormat.format(needTime.getTime()) + "\nОтсчёт пошёл!\n\n");
 
         while (true) {
             Calendar now = new GregorianCalendar();
@@ -47,9 +39,19 @@ public class Timer {
                 if (now.get(Calendar.SECOND) == nowTime.get(Calendar.SECOND) && now.get(Calendar.MILLISECOND) == nowTime.get(Calendar.MILLISECOND)) {      //проверка по условию ветвления, чтоб отображал в N сек - считывая с даты
                 Thread.sleep(1);                                  //приостановим работу программы на 1 милисекунду
                     timer--;
-                    if (timer != 0) System.out.println("Осталось подождать ещё " + timer + min);
+                    if (timer != 0) System.out.println("Осталось подождать ещё " + timer + minMet(timer));
                 }
             }
         }
+    }
+    public static String minMet(int timer){
+        String min = " минут";                                      // TODO: 16.01.2020 после присвоения, не будет возвращаться в "минут". поправить
+        if (timer == 1) min = " минуту";
+        if (timer > 20 && timer %10 == 1) min = " минуту";
+        if (timer == 2 || timer == 3 ||timer == 4) min = " минуты";
+        if (timer > 20 && timer %10 == 2) min = " минуты";
+        if (timer > 20 && timer %10 == 3) min = " минуты";
+        if (timer > 20 && timer %10 == 4) min = " минуты";
+        return min;
     }
 }

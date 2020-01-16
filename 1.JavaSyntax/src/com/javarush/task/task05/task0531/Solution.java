@@ -20,13 +20,14 @@ public class Solution {
         int e = Integer.parseInt(reader.readLine());
 
 //        int minimum = min(e, min(min(a, b), min(c, d)));
-        int minimum = min(a, min(b, min(c, min(d, e))));
-
-        System.out.println("Minimum = " + minimum);
+//        int minimum = min(a, min(b, min(c, min(d, e))));             //вызов метода с 2мя входными параметрами
+        System.out.println("Minimum = " + min(a,b,c,d,e));
     }
 
 
-    public static int min(int a, int b) {
-        return a < b ? a : b;
+//    public static int min(int a, int b) {return a < b ? a : b;}   //метод с 2мя входными параметрами
+
+    private static int min(int a, int b, int c, int d, int e) {                           //метод с 5-ю входными параметрами
+        return Math.min(a, Math.min(b, Math.min(c, Math.min(d, e))));
     }
 }

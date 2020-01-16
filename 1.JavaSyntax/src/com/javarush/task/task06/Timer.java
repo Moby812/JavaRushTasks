@@ -33,7 +33,7 @@ public class Timer {
                 System.out.println(" _____________________________");
                 System.out.println("| Настало время приключений!! |");
                 System.out.println("|_____________________________|");
-                // TODO: 16.01.2020 Добавить проигрывание звука
+                // TODO: 16.01.2020 Добавить проигрывание звука https://zvukipro.com/uploads/files/2018-10/1541011797_teddy_alert.mp3
                 break;
             } else {
                 if (now.get(Calendar.SECOND) == nowTime.get(Calendar.SECOND) && now.get(Calendar.MILLISECOND) == nowTime.get(Calendar.MILLISECOND)) {      //проверка по условию ветвления, чтоб отображал в N сек - считывая с даты

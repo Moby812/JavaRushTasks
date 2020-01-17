@@ -27,7 +27,7 @@ public class Solution {
 
 //    public static int min(int a, int b) {return a < b ? a : b;}   //метод с 2мя входными параметрами
 
-    private static int min(int a, int b, int c, int d, int e) {                           //метод с 5-ю входными параметрами
+    public static int min(int a, int b, int c, int d, int e) {                           //метод с 5-ю входными параметрами
         return Math.min(a, Math.min(b, Math.min(c, Math.min(d, e))));
     }
 }

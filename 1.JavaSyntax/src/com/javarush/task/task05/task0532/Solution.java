@@ -17,17 +17,19 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int count = Integer.parseInt(reader.readLine());
-        int maximum = 0;
+        if (count > 0) {
+            int maximum = 0;
 
-        //напишите тут ваш код
-        while (count > 0) {
-            int n = Integer.parseInt(reader.readLine());
-            if (n > 0) System.out.println(n);
-            maximum = n > maximum ? n : maximum;    // аналог -- if (n > maximum) maximum = n;
+            //напишите тут ваш код
+            while (count > 0) {
+                int n = Integer.parseInt(reader.readLine());
+//                if (n > 0) System.out.println(n);
+                maximum = n > maximum ? n : maximum;    // аналог -- if (n > maximum) maximum = n;
 //            maximum = Math.max(n, maximum);
-            count--;
-        }
+                count--;
+            }
 
-        if (maximum > 0) System.out.println(maximum);
+            if (maximum > 0) System.out.println(maximum);
+        }
     }
 }

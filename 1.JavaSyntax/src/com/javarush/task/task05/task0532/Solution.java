@@ -28,8 +28,7 @@ public class Solution {
                 maximum = Math.max(n, maximum);
                 count--;
             }
+            System.out.println(maximum);
         }
-        if (maximum > 0) System.out.println(maximum);
-//        System.out.println(maximum);
     }
 }

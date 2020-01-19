@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 
 public class BMI {
 
-
     public static void main(String[] args) throws IOException {
         BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите свой рост:");
@@ -21,19 +20,19 @@ public class BMI {
     public static class Body {
         public static void BMI(double weight, double height) {
             double mass = weight / (height * height);
-            double idealMaxWeight;    //в зависимости от роста считаем верхнюю планку идеального веса   //пик 25
-            idealMaxWeight = 25 * (height * height);
-            double minusIdealMaxWeight = weight - idealMaxWeight;
-            double idealMinWeight;    //в зависимости от роста считаем нижнюю планку идеального веса    //граница 18.5
-            idealMinWeight = 18.5 * (height * height);
-            double addIdealMinWeight = idealMinWeight - weight;
-            System.out.println("Нормальный вес при таком росте: "+idealMinWeight+" - "+idealMaxWeight+"кг.");
-            System.out.format(Color.WHITE + "Твой ИМТ: "+"%.1f%n", mass);  //привести к формату --http://study-java.ru/uroki-java/formatirovanie-chisel-i-texta-v-java/
+            double idealMaxWeight = 25 * (height * height);         //в зависимости от роста считаем верхнюю планку идеального веса   //пик 25
+            double minusIdealMaxWeight = weight - idealMaxWeight;   //считаем перевес до идеального веса
+            double idealMinWeight = 18.5 * (height * height);       //в зависимости от роста считаем нижнюю планку идеального веса    //граница 18.5
+            double addIdealMinWeight = idealMinWeight - weight;     //считаем недовес до идеального веса
+            System.out.format("Нормальный вес при таком росте: "+"%.2f",idealMinWeight);
+            System.out.format(" - " + "%.2f",idealMaxWeight);
+            System.out.println("кг.");
+            System.out.format(Color.WHITE + "Твой ИМТ: "+"%.1f%n", mass);  //приводим к формату http://study-java.ru/uroki-java/formatirovanie-chisel-i-texta-v-java/
 
-            if (mass < 18.5) System.out.println(Color.YELLOW + "Недовес: меньше чем 18.5 \nДо нормального веса надо набрать хотя бы: "+addIdealMinWeight);
+            if (mass < 18.5) System.out.format(Color.YELLOW + "Недовес: меньше чем 18.5 \nДо нормального веса надо набрать хотя бы: " +"%.2f", addIdealMinWeight);
             else if (mass >= 18.5 && mass < 25) System.out.println(Color.GREEN + "Нормальный: между 18.5 и 25");
-            else if (mass >= 25 && mass < 30) System.out.println(Color.YELLOW + "Избыточный вес: между 25 и 30 \nДо нормального веса надо скинуть хотя бы: "+minusIdealMaxWeight);
-            else System.out.println(Color.RED + "Ожирение: от 30 и выше. \nДо нормального веса надо скинуть хотя бы: "+minusIdealMaxWeight);
+            else if (mass >= 25 && mass < 30) System.out.format(Color.YELLOW + "Избыточный вес: между 25 и 30 \nДо нормального веса надо скинуть хотя бы: " +"%.2f", minusIdealMaxWeight);
+            else System.out.format(Color.RED + "Ожирение: от 30 и выше. \nДо нормального веса надо скинуть хотя бы: " +"%.2f", minusIdealMaxWeight);
         }
 
         private static class Color {

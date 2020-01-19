@@ -9,11 +9,11 @@ public class BMI {
 
     public static void main(String[] args) throws IOException {
         BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Введите свой вес:");
-        double weight = Double.parseDouble(bis.readLine());     //вес в кг
         System.out.println("Введите свой рост:");
         double height = Double.parseDouble(bis.readLine());     //рост
         if (height > 3) height /= 100;
+        System.out.println("Введите свой вес:");
+        double weight = Double.parseDouble(bis.readLine());     //вес в кг
 
         Body.BMI(weight, height);
     }
@@ -29,13 +29,13 @@ public class BMI {
         }
 
         private static class Color {
-            //            static final String BLACK = "\033[1;30m";
+//            static final String BLACK = "\033[1;30m";
             static final String RED = "\033[1;31m";
             static final String GREEN = "\033[1;32m";
-            static final String BLUE = "\033[1;34m";
+//            static final String BLUE = "\033[1;34m";
             static final String YELLOW = "\033[1;33m";
-            static final String PURPLE = "\033[1;35m";
-            static final String CYAN = "\033[1;36m";
+//            static final String PURPLE = "\033[1;35m";
+//            static final String CYAN = "\033[1;36m";
             static final String WHITE = "\033[1;37m";
         }
     }

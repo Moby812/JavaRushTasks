@@ -26,13 +26,13 @@ public class BMI {
             double addIdealMinWeight = idealMinWeight - weight;     //считаем недовес до идеального веса
             System.out.format("Нормальный вес при таком росте: "+"%.2f",idealMinWeight);
             System.out.format(" - " + "%.2f",idealMaxWeight);
-            System.out.println("кг.");
+            System.out.println("кг.\n");
             System.out.format(Color.WHITE + "Твой ИМТ: "+"%.1f%n", mass);  //приводим к формату http://study-java.ru/uroki-java/formatirovanie-chisel-i-texta-v-java/
 
-            if (mass < 18.5) System.out.format(Color.YELLOW + "Недовес: меньше чем 18.5 \nДо нормального веса надо набрать хотя бы: " +"%.2f", addIdealMinWeight);
-            else if (mass >= 18.5 && mass < 25) System.out.println(Color.GREEN + "Нормальный: между 18.5 и 25");
-            else if (mass >= 25 && mass < 30) System.out.format(Color.YELLOW + "Избыточный вес: между 25 и 30 \nДо нормального веса надо скинуть хотя бы: " +"%.2f", minusIdealMaxWeight);
-            else System.out.format(Color.RED + "Ожирение: от 30 и выше. \nДо нормального веса надо скинуть хотя бы: " +"%.2f", minusIdealMaxWeight);
+            if (mass < 18.5) System.out.format(Color.YELLOW + "Недовес! \nТвой ИМТ меньше чем 18.5 \nДо нормального веса надо набрать хотя бы кг: " +"%.1f", addIdealMinWeight);
+            else if (mass >= 18.5 && mass < 25) System.out.println(Color.GREEN + "Нормальный вес. \nТвой ИМТ между 18.5 и 25");
+            else if (mass >= 25 && mass < 30) System.out.format(Color.YELLOW + "Избыточный вес! \nТвой ИМТ между 25 и 30. \nДо нормального веса надо скинуть хотя бы кг: " +"%.1f", minusIdealMaxWeight);
+            else System.out.format(Color.RED + "Ожирение! \nТвой ИМТ выше 30 \nДо нормального веса надо скинуть хотя бы кг: " +"%.1f", minusIdealMaxWeight);
         }
 
         private static class Color {

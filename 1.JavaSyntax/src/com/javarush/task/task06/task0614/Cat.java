@@ -36,8 +36,12 @@ public class Cat {
 
     public static void printCats() {
         //напишите тут ваш код
-        for (Cat cat : cats) {
-            System.out.println(cat);
+//        for (Cat cat : cats) {
+//            System.out.println(cat);
+//        }
+
+        for (int i = 0; i < cats.size(); i++) {
+            System.out.println(cats.get(i));
         }
     }
 }

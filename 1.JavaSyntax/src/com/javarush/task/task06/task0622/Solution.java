@@ -35,7 +35,18 @@ public class Solution {
 
 ////////////////////////////////////////////////////////////////
         int numbers[] = new int[]{number1, number2, number3, number4, number5};       //через обычный массив
-        Arrays.sort(numbers);
+//        Arrays.sort(numbers);         //сортировка по возрастанию используя уже написанный метод
+
+        for (int i = numbers.length - 1; i > 0; i--) {      //сортировка пузырьковым типом
+            for (int j = 0; j < i; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int tmp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = tmp;
+                }
+            }
+        }
+
         for (int number : numbers) {
             System.out.println(number);
         }

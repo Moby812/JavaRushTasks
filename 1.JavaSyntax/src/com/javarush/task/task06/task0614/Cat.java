@@ -19,17 +19,25 @@ import java.util.ArrayList;
 
 public class Cat {
     //напишите тут ваш код
-
+    public static ArrayList<Cat> cats = new ArrayList<>();
 
     public Cat() {
     }
 
     public static void main(String[] args) {
         //напишите тут ваш код
+        for (int i = 0; i < 10; i++) {
+//            cats.add(new Cat());          //создаём и добавляем новый объект в лист
+            Cat cat = new Cat();             //создаём объект
+            cats.add(cat);                   //добавляем объект в лист
+        }
         printCats();
     }
 
     public static void printCats() {
         //напишите тут ваш код
+        for (Cat cat : cats) {
+            System.out.println(cat);
+        }
     }
 }

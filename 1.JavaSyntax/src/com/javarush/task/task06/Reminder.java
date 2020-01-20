@@ -30,7 +30,7 @@ public class Reminder {
         int HOUR = Integer.parseInt(hour);
         int MINUTE = Integer.parseInt(minute);
 
-        time.set(Calendar.HOUR, HOUR);      // TODO: 2020-01-20 не заменяет часы, а добавляет введённое к существующему времени
+        time.set(Calendar.HOUR, HOUR);      // TODO: 2020-01-20 записывает в 12часовом формате
         time.set(Calendar.MINUTE, MINUTE);
         time.set(Calendar.SECOND, 0);
 
@@ -51,7 +51,6 @@ public class Reminder {
                 Thread.sleep(15000);                                  //приостановим работу программы на 15сек
             }
         }
-
     }
 
     public static void beepNoise(int i) throws InterruptedException {

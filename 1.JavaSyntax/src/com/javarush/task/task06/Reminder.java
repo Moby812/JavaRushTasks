@@ -22,7 +22,7 @@ public class Reminder {
         int countText = text.length();
 
         System.out.println();
-        System.out.println("Введи в формате чч:мм, во сколько должно отобразиться напомининие?");
+        System.out.println("Введи в формате чч:мм (24ч), во сколько должно отобразиться напомининие?");
         String timer = reader.readLine();       // TODO: 2020-01-20 при вводе "01:40" - падает
 
         String hour = timer.split(":")[0];      // https://ru.stackoverflow.com/questions/604140/%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE-%D1%80%D0%B0%D1%81%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D1%82%D1%8C-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83-%D0%B2-java
@@ -30,15 +30,12 @@ public class Reminder {
         int HOUR = Integer.parseInt(hour);
         int MINUTE = Integer.parseInt(minute);
 
-        time.add(Calendar.HOUR, -12);      // TODO: 2020-01-20  Костыль который позволяет выставлять время получаемое с клавы
-        time.set(Calendar.HOUR, HOUR);
+        time.set(Calendar.HOUR_OF_DAY, HOUR);   //в случае Calendar.HOUR прибавляет +12 часов из-за тайм зоны
         time.set(Calendar.MINUTE, MINUTE);
         time.set(Calendar.SECOND, 0);
 
         System.out.println("Отсчёт пошёл!\n");
-//        System.out.println(time.get(Calendar.HOUR));
 //        System.out.println(time.getTime());
-//        System.out.println(dateFormat.format(time.getTime()));
 
         while (true) {
             Calendar now = new GregorianCalendar();

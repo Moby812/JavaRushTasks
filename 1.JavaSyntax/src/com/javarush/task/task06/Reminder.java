@@ -30,14 +30,15 @@ public class Reminder {
         int HOUR = Integer.parseInt(hour);
         int MINUTE = Integer.parseInt(minute);
 
-        time.set(Calendar.HOUR, HOUR);      // TODO: 2020-01-20 записывает в 12часовом формате
+        time.add(Calendar.HOUR, -12);      // TODO: 2020-01-20  Костыль который позволяет выставлять время получаемое с клавы
+        time.set(Calendar.HOUR, HOUR);
         time.set(Calendar.MINUTE, MINUTE);
         time.set(Calendar.SECOND, 0);
 
         System.out.println("Отсчёт пошёл!\n");
-        System.out.println(time.get(Calendar.HOUR));
-        System.out.println(time.getTime());
-        System.out.println(dateFormat.format(time.getTime()));
+//        System.out.println(time.get(Calendar.HOUR));
+//        System.out.println(time.getTime());
+//        System.out.println(dateFormat.format(time.getTime()));
 
         while (true) {
             Calendar now = new GregorianCalendar();

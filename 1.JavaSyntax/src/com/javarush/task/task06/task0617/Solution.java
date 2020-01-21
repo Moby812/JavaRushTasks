@@ -21,12 +21,13 @@ public class Solution {
 
     //напишите тут ваш код
     public static class Idea{
-        public String getDescription(String x){
-            return x;
+        public String getDescription(){
+            return "Text";
         }
     }
 
     public static void printIdea(Idea idea){
-//        System.out.println("var");
+        String x = idea.getDescription();
+        System.out.println(x);
     }
 }

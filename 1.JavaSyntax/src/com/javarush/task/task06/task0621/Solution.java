@@ -37,24 +37,30 @@ public class Solution {
         String grandMotherName = reader.readLine();         //бабушка
         Cat catGrandMother = new Cat(grandMotherName);
 
-        String fatherName = reader.readLine();              //папа (+ дедушка +бабушка)
-        Cat catFather = new Cat(fatherName, catGrandFather, catGrandMother);
+        String fatherName = reader.readLine();              //папа (+дедушка)
+        Cat catFather = new Cat(fatherName, catGrandFather);
 
-        String motherName = reader.readLine();              //мама (+ дедушка +бабушка)
-        Cat catMother = new Cat(motherName, catGrandFather, catGrandMother);
+        String motherName = reader.readLine();              //мама (+бабушка)
+        Cat catMother = new Cat(motherName, catGrandMother);
 
-        String daughterName = reader.readLine();            //дочь
-        Cat catDaughter = new Cat(daughterName, catGrandMother);
+        String sonName = reader.readLine();                  //сын (+папа, +мама)
+        Cat catSon = new Cat(sonName, catFather, catMother);
 
-//        String motherName = reader.readLine();
-//        Cat catMother = new Cat(motherName);
-//
-//        String daughterName = reader.readLine();
-//        Cat catDaughter = new Cat(daughterName, catMother);
+
+        String daughterName = reader.readLine();            //дочь (+папа, +мама)
+        Cat catDaughter = new Cat(daughterName, catFather, catMother);
+
 
 //новый код
 
-
+/*
+дедушка Вася
+бабушка Мурка
+папа Котофей
+мама Василиса
+сын Мурчик
+дочь Пушинка
+ */
 
 
         System.out.println(catGrandMother);

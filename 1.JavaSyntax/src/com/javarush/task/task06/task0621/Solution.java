@@ -31,42 +31,31 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-//        String grandFatherName = reader.readLine();         //дедушка
-        String grandFatherName = "дедушка Вася";
+        String grandFatherName = reader.readLine();         //дедушка
+//        String grandFatherName = "дедушка Вася";
         Cat catGrandFather = new Cat(grandFatherName);
 
-//        String grandMotherName = reader.readLine();         //бабушка
-        String grandMotherName = "бабушка Мурка";
+        String grandMotherName = reader.readLine();         //бабушка
+//        String grandMotherName = "бабушка Мурка";
         Cat catGrandMother = new Cat(grandMotherName);
 
-//        String fatherName = reader.readLine();              //папа (+дедушка)
-        String fatherName = "папа Котофей";
-        Cat catFather = new Cat(fatherName, catGrandFather, catGrandMother);
+        String fatherName = reader.readLine();              //папа (+дедушка)
+//        String fatherName = "папа Котофей";
+        Cat catFather = new Cat(fatherName, catGrandFather, null);
 
-//        String motherName = reader.readLine();              //мама (+бабушка)
-        String motherName = "мама Василиса";
-        Cat catMother = new Cat(motherName, catGrandFather,catGrandMother);
+        String motherName = reader.readLine();              //мама (+бабушка)
+//        String motherName = "мама Василиса";
+        Cat catMother = new Cat(motherName, null,catGrandMother);
 
-//        String sonName = reader.readLine();                  //сын (+папа, +мама)
-        String sonName = "сын Мурчик";
-        Cat catSon = new Cat(sonName, catFather, catMother, catGrandFather,catGrandMother);
-
-
-//        String daughterName = reader.readLine();            //дочь (+папа, +мама)
-        String daughterName = "дочь Пушинка";
-        Cat catDaughter = new Cat(daughterName, catFather, catMother, catGrandFather,catGrandMother);
+        String sonName = reader.readLine();                  //сын (+папа, +мама)
+//        String sonName = "сын Мурчик";
+        Cat catSon = new Cat(sonName, catFather, catMother, null,null);
 
 
-//новый код
+        String daughterName = reader.readLine();            //дочь (+папа, +мама)
+//        String daughterName = "дочь Пушинка";
+        Cat catDaughter = new Cat(daughterName, catFather, catMother, null,null);
 
-/*
-дедушка Вася
-бабушка Мурка
-папа Котофей
-мама Василиса
-сын Мурчик
-дочь Пушинка
- */
 
         System.out.println(catGrandFather);
         System.out.println(catGrandMother);
@@ -80,8 +69,6 @@ public class Solution {
         private String name;
         private Cat parentFather;
         private Cat parentMother;
-        private Cat parentGrandFather;
-        private Cat parentGrandMother;
 
         Cat(String name) {
             this.name = name;
@@ -97,8 +84,6 @@ public class Solution {
             this.name = name;
             this.parentFather = parentFather;
             this.parentMother = parentMother;
-            this.parentFather = null;
-            this.parentMother = null;
         }
 
         @Override

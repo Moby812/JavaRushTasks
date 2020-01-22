@@ -22,16 +22,18 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
 
-        int[] count = new int[10];
+        String[] count = new String[10];
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         for (int i = 2; i < count.length; i++) {
-            int num = Integer.parseInt(reader.readLine());
+            String num = reader.readLine();
             count[i] = num;
         }
-
+            int ii=9;
         for (int i =0; i < count.length; i++){          //int i =0; i < count.length; i++       //выводим в прямом порядке
-            System.out.println(count[i]);               //count[i]
+
+            System.out.println(count[ii]);
+            ii--;
         }
     }
 }

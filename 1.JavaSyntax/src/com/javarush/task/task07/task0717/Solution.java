@@ -17,12 +17,12 @@ public class Solution {
         // Считать строки с консоли и объявить ArrayList list тут
 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < 10; i++) list.add(i, reader.readLine()); // TODO: 26.01.2020 10
+        for (int i = 0; i < 10; i++) list.add(i, reader.readLine());
 
         ArrayList<String> result = doubleValues(list);
 
         // Вывести на экран result
-        System.out.println(result);
+        for (String x: result) System.out.println(x);
     }
 
     public static ArrayList<String> doubleValues(ArrayList<String> list) {
@@ -31,8 +31,6 @@ ArrayList<String> list = new ArrayList<String>();
             list.add(i, list.get(i));
             i++;
         }
-        System.out.println();
-
         return list;
     }
 }

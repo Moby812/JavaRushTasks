@@ -20,7 +20,13 @@ public class Solution {
 
         for (int i = 0; i < 10; i++) listString.add(i, reader.readLine());
 
-
+        int charSize =0;
+        for (int i = 0; i < listString.size() ; i++) {
+            if (listString.get(i).length() > charSize ) charSize = listString.get(i).length();
+            else {
+                System.out.println(i);
+                break;
+            }
+        }
     }
 }
-

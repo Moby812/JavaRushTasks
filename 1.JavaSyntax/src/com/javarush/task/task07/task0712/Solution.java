@@ -21,11 +21,19 @@ public class Solution {
         ArrayList<String> strings = new ArrayList<String>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        for (int i = 0; i < 10; i++) strings.add(i, reader.readLine());     //заполняем лист строками с клавы
-
-        int minSize = 0;
+        for (int i = 0; i < 4; i++) strings.add(i, reader.readLine());     //заполняем лист строками с клавы
+        // TODO: 26.01.2020 временно сделаю счётчик на 4 строки
+        int minSize = Integer.MAX_VALUE;
         int maxSize = 0;
 
-
+        for (int i = 0; i < strings.size(); i++) {
+            for (int j = 0; j < strings.size(); j++) {
+                int size = strings.get(j).length();
+                if (minSize > size) minSize = size;
+                if (maxSize < size) maxSize = size;
+            }
+            if (minSize == strings.get(i).length()) System.out.println(strings.get(i));
+            if (maxSize == strings.get(i).length()) System.out.println(strings.get(i));
+        }
     }
 }

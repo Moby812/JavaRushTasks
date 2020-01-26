@@ -32,12 +32,15 @@ public class Solution {
             else others.add(mass.get(i));
         }
 
-
-
+        printList(x3);                                          //отображаем все 3 листа
+        printList(x2);
+        printList(others);
     }
 
     public static void printList(ArrayList<Integer> list) {
         //напишите тут ваш код
-
+        for (Integer integer : list) {
+            System.out.println(integer);
+        }
     }
 }

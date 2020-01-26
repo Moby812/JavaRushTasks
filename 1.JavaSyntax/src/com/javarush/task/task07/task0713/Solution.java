@@ -18,6 +18,17 @@ import java.util.ArrayList;
 public class Solution {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        ArrayList<Integer> mass = new ArrayList<Integer>();     //основной список
+        ArrayList<Integer> x3 = new ArrayList<Integer>();       //Число нацело делится на 3 (x%3==0)
+        ArrayList<Integer> x2 = new ArrayList<Integer>();       //нацело делится на 2 (x%2==0)
+        ArrayList<Integer> others = new ArrayList<Integer>();   //все остальные
+
+        for (int i = 0; i < 20; i++) mass.add(Integer.parseInt(reader.readLine()));         //заполняем с клавы 20 чисел в массив
+
+
+
+
     }
 
     public static void printList(ArrayList<Integer> list) {

@@ -19,6 +19,6 @@ public class Solution {
 
         abs.remove(2);
 
-        for (int i = abs.size() - 1; i > 0; i--) System.out.println(abs.get(i));
+        for (int i = abs.size() - 1; i >= 0; i--) System.out.println(abs.get(i));
     }
 }

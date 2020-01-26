@@ -26,6 +26,11 @@ public class Solution {
 
         for (int i = 0; i < 20; i++) mass.add(Integer.parseInt(reader.readLine()));         //заполняем с клавы 20 чисел в массив
 
+        for (int i = 0; i < mass.size(); i++){                  //разбиваем основной список на 3
+            if (mass.get(i) %3 ==0) x3.add(mass.get(i));
+            if (mass.get(i) %2 ==0) x2.add(mass.get(i));
+            else others.add(mass.get(i));
+        }
 
 
 
@@ -33,5 +38,6 @@ public class Solution {
 
     public static void printList(ArrayList<Integer> list) {
         //напишите тут ваш код
+
     }
 }

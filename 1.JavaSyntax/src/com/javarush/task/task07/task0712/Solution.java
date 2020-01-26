@@ -32,8 +32,10 @@ public class Solution {
                 if (minSize > size) minSize = size;
                 if (maxSize < size) maxSize = size;
             }
-            if (minSize == strings.get(i).length()) System.out.println(strings.get(i));
-            if (maxSize == strings.get(i).length()) System.out.println(strings.get(i));
+//            if (minSize == strings.get(i).length()) System.out.println(strings.get(i));
+//            if (maxSize == strings.get(i).length()) System.out.println(strings.get(i));
         }
+        System.out.println(minSize);
+        System.out.println(maxSize);
     }
 }

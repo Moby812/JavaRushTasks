@@ -27,14 +27,18 @@ public class Solution {
 
     public static ArrayList<String> fix(ArrayList<String> strings) {
         //напишите тут ваш код
-        for (int i = 0; i < strings.size() ; i++) {
+        for (int i = 0; i < strings.size(); ) {
             String str = strings.get(i);
 //            if (str.contains("р") == true && str.contains("л") == false)
             if (str.contains("р") && !str.contains("л")) {
                 strings.remove(i);
-                i--;
             }
-            else if (!str.contains("р") && str.contains("л")) strings.add(i, str);
+            else if (!str.contains("р") && str.contains("л")) {
+                strings.add(i, str);
+                i+= 2;
+            } else {
+                i++;
+            }
         }
         return strings;
     }

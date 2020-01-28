@@ -17,23 +17,27 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        int maximum = Integer.MIN_VALUE;
-        int minimum = Integer.MAX_VALUE;
+        int maximum;
+        int minimum;
 
         //напишите тут ваш код
         int[] number = new int[20];
 
-        for (int i = 0; i <number.length ; i++) number[i] = Integer.parseInt(reader.readLine());
+        for (int i = 0; i < number.length; i++) number[i] = Integer.parseInt(reader.readLine());
 
-
-        for (int value : number) {
-            if (value > maximum) maximum = value;
-            else if (value < minimum) minimum = value;
-
-//        for (int i = 0; i <number.length ; i++) {
-//            if (number[i] > maximum) maximum = number[i];
-//            else if (number[i] < minimum) minimum = number[i];
+        for (int i = number.length - 1; i > 0; i--) { // максимальное число помещаем в самый конец.
+            for (int j = 0; j < i; j++) { // начинаем поиск максимального числа.
+                if (number[j] > number[j + 1]) { // сравниваем ближайшие значения.
+                    // меняем их местами
+                    int tmp = number[j];
+                    number[j] = number[j + 1];
+                    number[j + 1] = tmp;
+                }
+            }
         }
+
+        minimum = number[0];
+        maximum = number[number.length - 1];
 
         System.out.print(maximum + " " + minimum);
     }

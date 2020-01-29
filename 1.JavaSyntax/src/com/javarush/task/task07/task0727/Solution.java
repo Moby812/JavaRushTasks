@@ -27,8 +27,16 @@ public class Solution {
 
         ArrayList<String> resultStrings = new ArrayList<String>();  //второй список
         for (int i = 0; i < strings.size(); i++) {              //перебираем первый список
-            String string = strings.get(i);                     //переносим значение ячейки списка в переменную
-            resultStrings.add(string.toUpperCase());            //в новый список добавляем строку в вернем регистре
+            if (strings.get(i).length() %2 == 0) {
+                resultStrings.add(strings.get(i));
+                resultStrings.add(strings.get(i));
+            } else {
+                resultStrings.add(strings.get(i));
+                resultStrings.add(strings.get(i));
+                resultStrings.add(strings.get(i));
+            }
+//            String string = strings.get(i);                     //переносим значение ячейки списка в переменную
+//            resultStrings.add(string.toUpperCase());            //в новый список добавляем строку в вернем регистре
         }
 
         for (int i = 0; i < resultStrings.size(); i++) {        //выводим весь список на экран

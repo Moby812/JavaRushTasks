@@ -12,15 +12,15 @@ package com.javarush.task.task07.task0724;
 public class Solution {
     public static void main(String[] args) {
         // напишите тут ваш код
- Human grandPaOne = new Human();
- Human grandPaTwo = new Human();
- Human grandMaOne = new Human();
- Human grandMaTwo = new Human();
- Human pa = new Human();
- Human ma = new Human();
- Human childOne = new Human();
- Human childTwo = new Human();
- Human childThree = new Human();
+ Human grandPaOne = new Human("Александр", true, 80);
+ Human grandPaTwo = new Human("Николай", true, 52);
+ Human grandMaOne = new Human("Валентина", false, 86);
+ Human grandMaTwo = new Human("Ольга", false, 52);
+ Human pa = new Human("Павел", true, 31);
+ Human ma = new Human("Катерина", false, 25);
+ Human childOne = new Human("Олег", true,6);
+ Human childTwo = new Human("Алиса", false,2);
+ Human childThree = new Human("Кирилл", true,1);
     }
 
     public static class Human {

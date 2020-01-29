@@ -16,11 +16,21 @@ public class Solution {
  Human grandPaTwo = new Human("Николай", true, 52);
  Human grandMaOne = new Human("Валентина", false, 86);
  Human grandMaTwo = new Human("Ольга", false, 52);
- Human pa = new Human("Павел", true, 31);
- Human ma = new Human("Катерина", false, 25);
- Human childOne = new Human("Олег", true,6);
- Human childTwo = new Human("Алиса", false,2);
- Human childThree = new Human("Кирилл", true,1);
+ Human pa = new Human("Павел", true, 31, grandPaOne, grandMaOne);
+ Human ma = new Human("Катерина", false, 25, grandPaTwo, grandMaTwo);
+ Human childOne = new Human("Олег", true,6, pa, ma);
+ Human childTwo = new Human("Алиса", false,2, pa, ma);
+ Human childThree = new Human("Кирилл", true,1, pa, ma);
+
+        System.out.println(grandPaOne);
+        System.out.println(grandPaTwo);
+        System.out.println(grandMaOne);
+        System.out.println(grandMaTwo);
+        System.out.println(pa);
+        System.out.println(ma);
+        System.out.println(childOne);
+        System.out.println(childTwo);
+        System.out.println(childThree);
     }
 
     public static class Human {

@@ -12,11 +12,11 @@ import java.util.Arrays;
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-//        int[] array = new int[20];
-        int[] array = {4,6,8,3,9,3,0,-6,54,13};
-//        for (int i = 0; i < 20; i++) {
-//            array[i] = Integer.parseInt(reader.readLine());
-//        }
+        int[] array = new int[20];
+//        int[] array = {4,6,8,3,9,3,0,-6,54,13};
+        for (int i = 0; i < 20; i++) {
+            array[i] = Integer.parseInt(reader.readLine());
+        }
 
         sort(array);
 
@@ -28,8 +28,8 @@ public class Solution {
     public static void sort(int[] array) {
         //напишите тут ваш код
 
-        for (int i = array.length-1; i >= 0; i--) {
-            for (int j = i; j > 0; j--) {
+        for (int i = 0; i < array.length-1; i++) {
+            for (int j = array.length-1; j > 0; j--) {
                 if (array[j] > array[j-1]) {
                 int tmp = array[j-1];
                 array[j-1] = array[j];

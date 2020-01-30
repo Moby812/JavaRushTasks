@@ -27,13 +27,11 @@ public class Solution {
 
         ArrayList<String> resultStrings = new ArrayList<String>();  //второй список
         for (int i = 0; i < strings.size(); i++) {              //перебираем первый список
+            String textInList = strings.get(i);
             if (strings.get(i).length() %2 == 0) {
-                resultStrings.add(strings.get(i));
-                resultStrings.add(strings.get(i));
+                resultStrings.add(textInList +" "+ textInList);
             } else {
-                resultStrings.add(strings.get(i));
-                resultStrings.add(strings.get(i));
-                resultStrings.add(strings.get(i));
+                resultStrings.add(textInList +" "+ textInList +" "+ textInList);
             }
 //            String string = strings.get(i);                     //переносим значение ячейки списка в переменную
 //            resultStrings.add(string.toUpperCase());            //в новый список добавляем строку в вернем регистре

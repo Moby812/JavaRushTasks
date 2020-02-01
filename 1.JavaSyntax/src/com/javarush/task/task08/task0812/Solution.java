@@ -18,12 +18,22 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         List<Integer> numbers = new ArrayList<>();                                      //создаём лист
 
-        for (int i = 0; i < 10; i++) numbers.add(Integer.parseInt(reader.readLine()));  //заполняем лист 10-ю значениями с клавиатуры
+//        for (int i = 0; i < 10; i++) numbers.add(Integer.parseInt(reader.readLine()));  //заполняем лист 10-ю значениями с клавиатуры
+numbers.add(2);
+numbers.add(2);
+numbers.add(3);
+numbers.add(3);
+numbers.add(4);
+numbers.add(4);
+numbers.add(5);
+numbers.add(5);
+numbers.add(5);
+numbers.add(2);
 
         int count = 0;                                              // TODO: 01.02.2020 исключить из счёта учитывание повторяющихся пар 
         for (int i = 0; i < numbers.size()-1; i++) {
             if(numbers.get(i).equals(numbers.get(i + 1))) count+=1;
         }
-        System.out.println(count);
+        System.out.println(count);                                  //должен вывести "3"
     }
 }

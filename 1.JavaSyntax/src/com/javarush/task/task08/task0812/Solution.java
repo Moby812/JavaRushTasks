@@ -20,5 +20,10 @@ public class Solution {
 
         for (int i = 0; i < 10; i++) numbers.add(Integer.parseInt(reader.readLine()));  //заполняем лист 10-ю значениями с клавиатуры
 
+        int count = 0;                                              // TODO: 01.02.2020 исключить из счёта учитывание повторяющихся пар 
+        for (int i = 0; i < numbers.size()-1; i++) {
+            if(numbers.get(i).equals(numbers.get(i + 1))) count+=1;
+        }
+        System.out.println(count);
     }
 }

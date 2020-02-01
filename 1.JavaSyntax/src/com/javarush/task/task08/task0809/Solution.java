@@ -27,7 +27,8 @@ public class Solution {
         // напишите тут ваш код
         Date postList = new Date();
 
-        int time = postList - now;
+        long time = postList.getTime() - now.getTime();
+        return time;
     }
 
     public static void insert10000(List list) {

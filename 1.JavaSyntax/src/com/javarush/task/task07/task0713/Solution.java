@@ -28,8 +28,8 @@ public class Solution {
 
         for (int i = 0; i < mass.size(); i++){                  //разбиваем основной список на 3
             if (mass.get(i) %3 ==0) x3.add(mass.get(i));
-            else if (mass.get(i) %2 ==0) x2.add(mass.get(i));
-            else others.add(mass.get(i));
+            if (mass.get(i) %2 ==0) x2.add(mass.get(i));
+            if (mass.get(i) %3 !=0 && mass.get(i) %2 !=0) others.add(mass.get(i));
         }
 
         printList(x3);                                          //отображаем все 3 листа

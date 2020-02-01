@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /* 
@@ -22,10 +23,16 @@ public class Solution {
 
 //        for (int i = 0; i < 10; i++) numbers.add(Integer.parseInt(reader.readLine()));  //заполняем лист 10-ю значениями с клавиатуры
 
-        int count = 0;                                              // TODO: 01.02.2020 исключить из счёта учитывание повторяющихся пар 
+        List<Integer> countList = new ArrayList<>();
+        int count = 1;
         for (int i = 0; i < numbers.size() - 1; i++) {
             if (numbers.get(i).equals(numbers.get(i + 1))) count += 1;
+            else {
+                countList.add(count);
+                count = 1;
+            }
         }
-        System.out.println(count);                                  //должен вывести "3"
+        Collections.sort(countList);
+        System.out.println(countList.get(countList.size()-1));                                  //должен вывести "3"
     }
 }

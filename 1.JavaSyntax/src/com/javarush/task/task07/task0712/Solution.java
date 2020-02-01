@@ -21,7 +21,7 @@ public class Solution {
         ArrayList<String> strings = new ArrayList<String>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        for (int i = 0; i < 20; i++) strings.add(i, reader.readLine());     //заполняем лист строками с клавы
+        for (int i = 0; i < 10; i++) strings.add(i, reader.readLine());     //заполняем лист строками с клавы
         int minSize = Integer.MAX_VALUE;
         int maxSize = 0;
 
@@ -34,11 +34,11 @@ public class Solution {
 
         for (int i = 0; i < strings.size(); i++) {
             if (strings.get(i).length() == minSize) {
-                System.out.println(strings.get(i));
+                System.out.print(strings.get(i));
                 break;
             }
             if (strings.get(i).length() == maxSize) {
-                System.out.println(strings.get(i));
+                System.out.print(strings.get(i));
                 break;
             }
         }

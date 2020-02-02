@@ -28,17 +28,26 @@ public class Solution {
 
     public static int getCountTheSameFirstName(Map<String, String> map, String name) {
         //напишите тут ваш код
+        int count = 0;
         for (Map.Entry<String, String> pair : map.entrySet()) {
-            String fioName = pair.getValue();
+            String fioFirstName = pair.getValue();
+            if (fioFirstName.equals(name)) count++;
         }
+        return count;
     }
 
     public static int getCountTheSameLastName(Map<String, String> map, String lastName) {
         //напишите тут ваш код
-
+        int count = 0;
+        for (Map.Entry<String, String> pair: map.entrySet()){
+            String fioLastName = pair.getKey();
+            if (fioLastName.equals(lastName)) count++;
+        }
+        return count;
     }
 
     public static void main(String[] args) {
-
+        System.out.println(getCountTheSameFirstName(createMap(), "Илья"));
+        System.out.println(getCountTheSameLastName(createMap(), "Басов"));
     }
 }

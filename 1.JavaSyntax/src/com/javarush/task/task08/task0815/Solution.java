@@ -47,7 +47,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(getCountTheSameFirstName(createMap(), "Илья"));
-        System.out.println(getCountTheSameLastName(createMap(), "Басов"));
+//        System.out.println(getCountTheSameFirstName(createMap(), "Илья"));
+//        System.out.println(getCountTheSameLastName(createMap(), "Басов"));
     }
 }

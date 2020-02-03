@@ -33,15 +33,15 @@ public class Solution {
     }
 
     public static void removeItemFromMapByValue(Map<String, String> map, String value) {
-        Map<String, String> copy = new HashMap<>(map);
-        for (Map.Entry<String, String> pair : copy.entrySet()) {
-            if (pair.getValue().equals(value)) {
-                map.remove(pair.getKey());
+        Map<String, String> copy = new HashMap<>(map);                                                                  //создаём копию переданного в параметры списка
+        for (Map.Entry<String, String> pair : copy.entrySet()) {                                                        //для всех элементов нового списка
+            if (pair.getValue().equals(value)) {                                                                        //если имя равняется имени из параметра
+                map.remove(pair.getKey());                                                                              //тогда в основном списке удалять ключ
             }
         }
     }
 
     public static void main(String[] args) {
-//for (Map.Entry<String, String> pair: )
+
     }
 }

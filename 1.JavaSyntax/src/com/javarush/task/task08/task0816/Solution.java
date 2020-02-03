@@ -31,12 +31,19 @@ public class Solution {
     }
 
     public static void removeAllSummerPeople(Map<String, Date> map) {
-//        map.values().stream().filter(x -> x)
         //напишите тут ваш код
+        DateFormat dateFormatOnlyMount = new SimpleDateFormat("M");
 
+        for (Map.Entry<String, Date> pair: map.entrySet()){
+            Date birthDay = pair.getValue();
+//            dateFormatOnlyMount.format(birthDay);
+            System.out.println(dateFormatOnlyMount.format(birthDay));
+        }
+        map.values().removeIf(x -> x.after() && x.before());        //Удаляем строки в которых Х.ПОЗЖЕ (дата) и Х.РАНЬШЕ (дата)
     }
 
     public static void main(String[] args) throws ParseException {
-        System.out.println(createMap().values());
+removeAllSummerPeople(createMap());
+//        System.out.println(createMap().values());
     }
 }

@@ -13,7 +13,7 @@ import java.util.Set;
 public class Solution {
     public static Set<Integer> createSet() {
         // напишите тут ваш код
-        Set<Integer> set = new HashSet<>(Arrays.asList(5, 7, 9, 4, 34, 5, 11, 2, 45, 812));
+        Set<Integer> set = new HashSet<>(Arrays.asList(5, 7, 9, 4, 34, 51, 11, 2, 45, 812, 165,0,56,8,15,29,13,6,100,1));
         return set;
     }
 

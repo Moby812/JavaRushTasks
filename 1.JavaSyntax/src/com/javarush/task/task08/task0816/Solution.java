@@ -25,17 +25,18 @@ public class Solution {
         map.put("Ленин", dateFormat.parse("APR 22 1870"));
         map.put("Сталин", dateFormat.parse("DEC 18 1878"));
         map.put("Эйнштейн", dateFormat.parse("MAR 14 1879"));
-        map.put("Никола", dateFormat.parse("YUL 10 1856"));
+        map.put("Никола", dateFormat.parse("JUL 10 1856"));
         map.put("Чарльз", dateFormat.parse("FEB 12 1809"));
     return map;
     }
 
     public static void removeAllSummerPeople(Map<String, Date> map) {
+//        map.values().stream().filter(x -> x)
         //напишите тут ваш код
 
     }
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws ParseException {
+        System.out.println(createMap().values());
     }
 }

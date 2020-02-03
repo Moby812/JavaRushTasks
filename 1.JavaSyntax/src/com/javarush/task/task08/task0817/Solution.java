@@ -1,7 +1,6 @@
 package com.javarush.task.task08.task0817;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /* 
 Нам повторы не нужны
@@ -31,12 +30,8 @@ public class Solution {
         Map<String, String> copy = new HashMap<>(map);                                                                  //создаём копию переданного в параметры списка
         for (Map.Entry<String, String> pair : copy.entrySet()) {                                                        //для всех элементов нового списка
             String value = pair.getValue();                                                                             //сохраняем значение в переменную
-            // TODO: 2020-02-03 сейчас, он перебирает всех в переменную value
-
-            for (Map.Entry<String, String> x : copy.entrySet()) {
-                if (x.getValue().equals(value))
-
-                removeItemFromMapByValue(map, value);                                                //вызываем метод удаления ключа из введённого в параметрах списока (которое получаем посредством перебора списка)
+            if (map.values().stream().filter(x -> x.equals(value)).count() > 1) {                //вытаскиваем все значения из карты, отфильтровываем все значения которых больше одного
+                removeItemFromMapByValue(map, value);
             }
         }
     }
@@ -56,8 +51,6 @@ public class Solution {
         Map<String, String> result = createMap();
         removeTheFirstNameDuplicates(result);
 //        removeItemFromMapByValue(result, "Илья");
-        System.out.println("количество повторяющихся имён: ");
         System.out.println("После чистки: " + result.size());                                                           //должно вывести 5 (-2 Ильи и -3 Алексея)
-
     }
 }

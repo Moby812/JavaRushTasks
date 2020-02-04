@@ -23,9 +23,7 @@ public class Solution {
 
 
         removeCats(pets, cats);
-//        printPets(pets);
-        System.out.println();
-        for (Cat x: cats) System.out.println(x);        // TODO: 2020-02-04 бахнуть эту запись
+        printPets(pets);
     }
 
     public static Set<Cat> createCats() {
@@ -51,18 +49,16 @@ public class Solution {
     public static Set<Object> join(Set<Cat> cats, Set<Dog> dogs) {
         //напишите тут ваш код. Step 4
         Set<Object> pets = new HashSet<>();
-        pets.addAll(cats);                                                                                            // в список animal добавляем всех котов и собак
+        pets.addAll(cats);                                                                                              //в список animal добавляем всех котов и собак
         pets.addAll(dogs);
 
         return pets;
     }
 
     public static void removeCats(Set<Object> pets, Set<Cat> cats) {
-        //напишите тут ваш код. Step 5              метод removeCats, который должен удалять из множества pets всех котов, которые есть в множестве cats.
-        for (Object p: pets) {
-
-            // TODO: 2020-02-04
-        }
+        //напишите тут ваш код. Step 5
+            pets.removeIf(cats::contains);                                                                              //из списка pets удаляем все объекты содержащиеся в списке cats
+//            pets.removeIf(x -> (cats.contains(x)));
     }
 
     public static void printPets(Set<Object> pets) {

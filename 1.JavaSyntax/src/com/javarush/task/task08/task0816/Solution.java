@@ -15,7 +15,7 @@ public class Solution {
     public static Map<String, Date> createMap() throws ParseException {
         DateFormat dateFormat = new SimpleDateFormat("MMMMM d yyyy", Locale.ENGLISH);
         Map<String, Date> map = new HashMap<>();
-        map.put("Сталлоне", dateFormat.parse("MAY 1 2012"));
+        map.put("Сталлоне", dateFormat.parse("JUL 6 1946"));
 
         //напишите тут ваш код
         map.put("Павел", dateFormat.parse("APR 4 1989"));
@@ -32,18 +32,21 @@ public class Solution {
 
     public static void removeAllSummerPeople(Map<String, Date> map) {
         //напишите тут ваш код
-        DateFormat dateFormatOnlyMount = new SimpleDateFormat("M");
-
-        for (Map.Entry<String, Date> pair: map.entrySet()){
+        Map <String, Date> copy = new HashMap<>(map);
+        for (Map.Entry<String, Date> pair: copy.entrySet()){
             Date birthDay = pair.getValue();
-//            dateFormatOnlyMount.format(birthDay);
-            System.out.println(dateFormatOnlyMount.format(birthDay));
+            int bDM = birthDay.getMonth();
+            if (bDM > 4 && bDM < 8) map.remove(pair.getKey()); //System.out.println("они родились летом: "+ pair.getKey());                     //месяцы считаются с 0
         }
-        map.values().removeIf(x -> x.after() && x.before());        //Удаляем строки в которых Х.ПОЗЖЕ (дата) и Х.РАНЬШЕ (дата)
     }
 
     public static void main(String[] args) throws ParseException {
-removeAllSummerPeople(createMap());
-//        System.out.println(createMap().values());
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
+        Map<String, Date> result = createMap();
+        removeAllSummerPeople(result);
+
+        for (Map.Entry<String, Date> pair :result.entrySet()) {
+            System.out.println(pair.getKey()+ ": "+dateFormat.format(pair.getValue()));
+        }
     }
 }

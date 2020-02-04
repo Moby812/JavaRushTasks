@@ -46,11 +46,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println("В создаваемом списке: " + Solution.createMap().size() + " записей");
+//        System.out.println("В создаваемом списке: " + Solution.createMap().size() + " записей");
 
-        Map<String, String> result = createMap();
-        removeTheFirstNameDuplicates(result);
+//        Map<String, String> result = createMap();
+//        removeTheFirstNameDuplicates(result);
 //        removeItemFromMapByValue(result, "Илья");
-        System.out.println("После чистки: " + result.size());                                                           //должно вывести 5 (-2 Ильи и -3 Алексея)
+//        System.out.println("После чистки: " + result.size());                                                           //должно вывести 5 (-2 Ильи и -3 Алексея)
     }
 }

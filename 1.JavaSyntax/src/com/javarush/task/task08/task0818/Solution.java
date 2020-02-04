@@ -29,10 +29,21 @@ public class Solution {
 
     public static void removeItemFromMap(Map<String, Integer> map) {
         //напишите тут ваш код
-
+            map.values().removeIf(x -> x < 500);
     }
 
     public static void main(String[] args) {
+//        Map<String, Integer> result = createMap();
+//        removeItemFromMap(result);
 
+//        result.entrySet().stream()                                                      //http://devify.ru/p/5c5c1a699194be0001bcf9d8 Сортировка карты по value
+//                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+//                .forEach(System.out::println); // или любой другой конечный метод
+
+//        for (Map.Entry<String,Integer> pair: result.entrySet()) {
+//            String key = pair.getKey();
+//            Integer value = pair.getValue();
+//            System.out.println(key +" зарабатывает: "+ value);
+//        }
     }
 }

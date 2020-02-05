@@ -3,7 +3,9 @@ package com.javarush.task.task08.task0824;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
+https://javarush.ru/help/2310
+
 Собираем семейство
 1. Создай класс Human с полями имя (String), пол (boolean), возраст (int), дети (ArrayList<Human>).
 2. Создай объекты и заполни их так, чтобы получилось: два дедушки, две бабушки, отец, мать, трое детей.
@@ -13,12 +15,28 @@ import java.util.List;
 public class Solution {
     public static void main(String[] args) {
         //напишите тут ваш код. Step 2
+        ArrayList<Human> children = new ArrayList<>();
 
+        Human grandPaOne = new Human("Александр", true, 60, null);
+        Human grandPaTwo = new Human("Николай", true, 60, null);
+        Human grandMaOne = new Human("Валентина", false, 60, null);
+        Human grandMaTwo = new Human("Юля", false, 60, null);
+        Human pa = new Human("Павел", true, 30, children);
+        Human ma = new Human("Катерина", false, 25, children);
+
+        children.add(new Human("Олег", true, 1));
+        children.add(new Human("Кира", false, 4));
+        children.add(new Human("Мартин", true, 3));
 
         //Step 3
+        System.out.println(grandPaOne.toString());
+        System.out.println(grandPaTwo.toString());
+        System.out.println(grandMaOne.toString());
+        System.out.println(grandMaTwo.toString());
+        System.out.println(pa.toString());
+        System.out.println(ma.toString());
 
-
-
+        for (Human x: children) System.out.println(x.toString());
     }
 
     public static class Human {
@@ -28,12 +46,26 @@ public class Solution {
         int age;
         ArrayList<Human> children;
 
+        public Human(String name, boolean sex, int age) {
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+        }
+
+        public Human(String name, boolean sex, int age, ArrayList<Human> children) {
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+            this.children = children;
+        }
+
         public String toString() {
             String text = "";
             text += "Имя: " + this.name;
             text += ", пол: " + (this.sex ? "мужской" : "женский");
             text += ", возраст: " + this.age;
 
+            if (children != null) {                                                                                     //добавил условие, если детей вообще нет
             int childCount = this.children.size();
             if (childCount > 0) {
                 text += ", дети: " + this.children.get(0).name;
@@ -43,6 +75,7 @@ public class Solution {
                     text += ", " + child.name;
                 }
             }
+        }
             return text;
         }
     }

@@ -19,7 +19,7 @@ http://proglang.su/java/strings-trim
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String string = reader.readLine();
+        String string = reader.readLine().trim();
 
         //напишите тут ваш код
 //        List <String> words = new ArrayList<>(Arrays.asList(string.split(" ")));                                      //парсим строку по условию " ", и добавляем строки в создаваемый лист words
@@ -35,13 +35,13 @@ public class Solution {
 
 //        StringBuilder stringBuilder = new StringBuilder();
 //        for (String s : words) {
-//            char[] letter = s.trim().toCharArray();                                                                                   //toCharArray() — преобразует данную строку в новый массив символов.
-//            letter[0] = Character.toUpperCase(letter[0]);                                                               //поднимаем в верхний егистр первый символ из массива letter
+//            char[] letter = s.trim().toCharArray();                                                                   //toCharArray() — преобразует данную строку в новый массив символов.
+//            letter[0] = Character.toUpperCase(letter[0]);                                                             //поднимаем в верхний егистр первый символ из массива letter
 //            stringBuilder.append(letter);
 //            stringBuilder.append(" ");
 //        }
 //
-//        System.out.println(stringBuilder.toString().trim());                                                            //trim() — возвращает копию строки с пропущенными начальными и конечными пробелами
+//        System.out.println(stringBuilder.toString().trim());                                                          //trim() — возвращает копию строки с пропущенными начальными и конечными пробелами
 
 
         String text = "";

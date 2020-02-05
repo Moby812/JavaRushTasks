@@ -27,22 +27,28 @@ public class Solution {
 //        List <String> words = new ArrayList<>();
 //        String word[] = string.split(" ");
 
-        String[] words = string.split(" ");                                                                       //парсим строку по условию " ", и добавляем строки в создаваемый массив words
-
-        StringBuilder stringBuilder = new StringBuilder();
-        for (String s:words) {
-            char [] letter = s.toCharArray();                                                                                   //toCharArray() — преобразует данную строку в новый массив символов.
-            letter[0] = Character.toUpperCase(letter[0]);                                                               //поднимаем в верхний егистр первый символ из массива letter
-            stringBuilder.append(letter);
-            stringBuilder.append(" ");
-
+        while (string.contains("  ")) {                                                                                  //если строка содержит "  ", то заменяем "  " на " "
+            string = string.replace("  ", " ");
         }
 
-        System.out.println(stringBuilder.toString().trim());                                                            //trim() — возвращает копию строки с пропущенными начальными и конечными пробелами,
+        String[] words = string.split(" ");                                                                       //парсим строку по условию " ", и добавляем строки в создаваемый массив words
 
-//        for (String s:words) {                                                                                        //поднимаем первый символ строки без билдера
-//            String capitalized = Character.toUpperCase(s.charAt(0)) + s.substring(1);                                 //toUpperCase() - преобразует все знаки в данной строке в верхний регистр
-//            System.out.print(capitalized+ " ");                                                                       //charAt() — возвращает символ, расположенный по указанному индексу строки.
-//        }                                                                                                             //substring() - возвращает строку, начиная с указанного символа.
+//        StringBuilder stringBuilder = new StringBuilder();
+//        for (String s : words) {
+//            char[] letter = s.trim().toCharArray();                                                                                   //toCharArray() — преобразует данную строку в новый массив символов.
+//            letter[0] = Character.toUpperCase(letter[0]);                                                               //поднимаем в верхний егистр первый символ из массива letter
+//            stringBuilder.append(letter);
+//            stringBuilder.append(" ");
+//        }
+//
+//        System.out.println(stringBuilder.toString().trim());                                                            //trim() — возвращает копию строки с пропущенными начальными и конечными пробелами
+
+
+        String text = "";
+        for (String s : words) {                                                                                        //поднимаем первый символ строки без билдера
+            String capitalized = Character.toUpperCase(s.charAt(0)) + s.substring(1) + " ";                             //toUpperCase() - преобразует все знаки в данной строке в верхний регистр
+            text += capitalized;                                                                                        //charAt() — возвращает символ, расположенный по указанному индексу строки
+        }                                                                                                               //substring() - возвращает строку, начиная с указанного символа.
+        System.out.println(text.trim());
     }
 }

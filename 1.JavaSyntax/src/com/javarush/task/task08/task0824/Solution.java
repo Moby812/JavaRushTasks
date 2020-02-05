@@ -12,11 +12,17 @@ import java.util.List;
 
 public class Solution {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        //напишите тут ваш код. Step 2
+
+
+        //Step 3
+
+
+
     }
 
     public static class Human {
-        //напишите тут ваш код
+        //напишите тут ваш код. Step 1
         String name;
         boolean sex;
         int age;

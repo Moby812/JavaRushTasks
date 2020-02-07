@@ -27,12 +27,23 @@ public class Solution {
             list.add(family);
         }
 
-        // Read the house number
-        int houseNumber = Integer.parseInt(reader.readLine());
+//        // Read the house number
+//        int houseNumber = Integer.parseInt(reader.readLine());
+//
+//        if (0 <= houseNumber && houseNumber < list.size()) {
+//            String familyName = list.get(houseNumber);
+//            System.out.println(familyName);
+//        }
 
-        if (0 <= houseNumber && houseNumber < list.size()) {
-            String familyName = list.get(houseNumber);
-            System.out.println(familyName);
+
+        // Read the house number
+        String city = reader.readLine();
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equalsIgnoreCase(city)) {
+                String family = list.get(i - 1);
+                System.out.println(family);
+            }
         }
     }
 }

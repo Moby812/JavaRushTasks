@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String[] array = new String[20];
+        String[] array = new String[4];        // TODO: 2020-02-07 вернуть значение 20
         for (int i = 0; i < array.length; i++) {
             array[i] = reader.readLine();
         }
@@ -25,6 +25,13 @@ public class Solution {
 
     public static void sort(String[] array) {
         //напишите тут ваш код
+        for (int i = 0; i < array.length-1; i++) {
+
+            if (isGreaterThan(array[i],array[i+1])) {
+
+                String tmp;
+            }
+        }
     }
 
     //Метод для сравнения строк: 'а' больше чем 'b'

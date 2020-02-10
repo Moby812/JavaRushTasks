@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String[] array = new String[5];
+        String[] array = new String[20];
         for (int i = 0; i < array.length; i++) {
             array[i] = reader.readLine();
         }

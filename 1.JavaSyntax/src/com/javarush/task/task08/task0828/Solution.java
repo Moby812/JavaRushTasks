@@ -29,7 +29,7 @@ public class Solution {
         months.put("April",4);
         months.put("May",5);
         months.put("June",6);
-        months.put("Jule",7);
+        months.put("July",7);
         months.put("August",8);
         months.put("September",9);
         months.put("October",10);
@@ -38,7 +38,8 @@ public class Solution {
 
 
         for (Map.Entry <String, Integer> pair: months.entrySet()) {
-            if (pair.getKey().equalsIgnoreCase(month)) System.out.println(pair.getKey() +" is the "+ pair.getValue() +"."); //equals(month)) System.out.println(month +" is the "+ pair.getValue() +".");
+            if (pair.getKey().equalsIgnoreCase(month)) System.out.println(pair.getKey() +" is the "+ pair.getValue() +" month"); //equals(month)) System.out.println(month +" is the "+ pair.getValue() +".");
+//            if (pair.getKey().equalsIgnoreCase(month)) System.out.print(month +" is the "+ pair.getValue() +" month"); //equals(month)) System.out.println(month +" is the "+ pair.getValue() +".");
         }
     }
 }

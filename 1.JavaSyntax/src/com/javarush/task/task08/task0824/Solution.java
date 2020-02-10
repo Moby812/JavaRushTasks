@@ -17,12 +17,16 @@ public class Solution {
         //напишите тут ваш код. Step 2
         ArrayList<Human> children = new ArrayList<>();
 
-        Human grandPaOne = new Human("Александр", true, 60, null);
-        Human grandPaTwo = new Human("Николай", true, 60, null);
-        Human grandMaOne = new Human("Валентина", false, 60, null);
-        Human grandMaTwo = new Human("Юля", false, 60, null);
-        Human pa = new Human("Павел", true, 30, children);
-        Human ma = new Human("Катерина", false, 25, children);
+        ArrayList<Human> parentPa = new ArrayList<>();
+        ArrayList<Human> parentMa = new ArrayList<>();
+
+        parentPa.add(new Human("Павел", true, 30, children));
+        parentMa.add(new Human("Катерина", false, 25, children));
+
+        Human grandPaOne = new Human("Александр", true, 60, parentPa);
+        Human grandPaTwo = new Human("Николай", true, 60, parentMa);
+        Human grandMaOne = new Human("Валентина", false, 60, parentPa);
+        Human grandMaTwo = new Human("Юля", false, 60, parentMa);
 
         children.add(new Human("Олег", true, 1));
         children.add(new Human("Кира", false, 4));
@@ -33,8 +37,10 @@ public class Solution {
         System.out.println(grandPaTwo.toString());
         System.out.println(grandMaOne.toString());
         System.out.println(grandMaTwo.toString());
-        System.out.println(pa.toString());
-        System.out.println(ma.toString());
+
+
+        for (Human x: parentPa) System.out.println(x.toString());
+        for (Human x: parentMa) System.out.println(x.toString());
 
         for (Human x: children) System.out.println(x.toString());
     }

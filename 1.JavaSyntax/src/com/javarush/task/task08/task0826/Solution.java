@@ -38,8 +38,8 @@ public class Solution {
 
 //        Arrays.sort(array, Collections.reverseOrder());         //быстрая обратная сортировка работает только с типом переменной Integer
 
-        for (int i = array.length-1; i > 0; i--) {                 //сортировка пузырьком
-            for (int j = 0; j < i; j++) {
+        for (int i = array.length-1; i > 0; i--) {                 //сортировка пузырьком   i = длинне массива(минус 1 знак) и каждую итерацию уменьшается
+            for (int j = 0; j < i; j++) {                                               //j равна нулю и гоняется пока меньше чем i ()
                 int tmp;
                 if (array[j] < array[j+1]) {
                     tmp = array[j];

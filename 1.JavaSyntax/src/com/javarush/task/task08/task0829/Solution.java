@@ -41,7 +41,7 @@ public class Solution {
 
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).equalsIgnoreCase(city)) {
-                String family = list.get(i - 1);
+                String family = list.get(i + 1);
                 System.out.println(family);
             }
         }
